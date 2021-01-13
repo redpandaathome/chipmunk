@@ -38,6 +38,7 @@ app.use(session({
 app.use((req, res, next) => {
    // res.status(404).send('Not Found');
    console.log("요청!")
+   ////
    next();
    // const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
    // error.status=404;

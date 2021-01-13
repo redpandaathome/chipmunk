@@ -36,18 +36,16 @@ app.use(session({
 }));
 
 app.use((req, res, next) => {
-   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
-   error.status=404;
-   next(error)
+   // res.status(404).send('Not Found');
+   console.log("요청!")
+   next();
+   // const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
+   // error.status=404;
+   // next(error)
 })
 
 app.use('/', indexRouter);
 app.use('/user', userRouter);
-app.use((req,res,next)=>{
-   // res.status(404).send('Not Found');
-   console.log("요청!")
-   console.log(res.status)
-})
 
 app.get('/test', (req, res, next) => {
    console.log('GET /test 요청에서만 실행됩니다')

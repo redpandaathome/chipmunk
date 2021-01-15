@@ -5,6 +5,11 @@ const session = require("express-session");
 const dotenv = require("dotenv");
 const path = require("path");
 const nunjucks = require("nunjucks");
+// const firebase = require('firebase');
+// const firebaseui = require('firebaseui');
+// require("firebase/auth")
+// const fbase=require("./fireBase")
+
 const indexRouter = require("./routes");
 const userRouter = require('./routes/user');
 

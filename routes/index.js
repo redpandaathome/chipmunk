@@ -18,4 +18,8 @@ router.get('/njx2', (req,res)=>{
    res.render('body', {title:'Chip Chip Chip 🐿'})
 })
 
+router.get('/login', (req,res)=>{
+   res.render('login.html')
+})
+
 module.exports = router;

@@ -1,4 +1,23 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-<button class="{{title}}" type="submit">send</button>
-<input placeholder="{{title}} 연습"/>
+{% include "header.html" %}
+<script src="/fireBase.js"></script>
+<script src="/indexUser.js"></script>
+<body>
+   <h1>{{title}}</h1>
+   <p id="username"></p>
+   <p>Welcome to {{title}}</p>
+   
+   <button class="{{title}}" type="submit">send</button>
+   <input placeholder="{{title}} 연습"/>
+
+
+   {% if currentUser %}
+   <div><button id="logout" type="submit">Log out</button></div>
+   {% else %}
+   <div><button id="login" type="submit">Log in</button></div>
+   <div><button id="signup" type="submit">Sign up</button></div>
+   {% endif %}
+
+</body>
+
+
+{% include "footer.html" %}

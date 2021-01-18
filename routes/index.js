@@ -1,10 +1,10 @@
 const express = require("express")
-
 const router= express.Router();
+const admin = require("../fbase.config")
 
 //GET
 router.get('/', (req, res) => {
-   // res.send("Hello, baby chipmunk 🐿");
+   
    res.render('index', {title:'Chipmunk🐿'});
 });
 
@@ -18,8 +18,8 @@ router.get('/njx2', (req,res)=>{
    res.render('body', {title:'Chip Chip Chip 🐿'})
 })
 
-router.get('/login', (req,res)=>{
-   res.render('login.html')
-})
+// router.get('/login', (req,res)=>{
+//    res.render('login.html')
+// })
 
 module.exports = router;

@@ -1,5 +1,5 @@
-var currentUser = getCurrentUserOnAuthStateChanged();
-
+let currentUser = getCurrentUserOnAuthStateChanged();
+let token;
 async function getCurrentUserOnAuthStateChanged(){
    await firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
@@ -13,10 +13,15 @@ async function getCurrentUserOnAuthStateChanged(){
       //   console.log(user.emailVerified)
       //   console.log(user.uid)
       
+      document.getElementById('logout').style = 'display:show';
+      token = user.getIdToken()
+      
       return user;
       } else {
       // No user is signed in.
       console.log("no user!")
+      
+      document.getElementById('signin').style = 'display:show';
       //   window.location = "/user/login"
       }
    });
@@ -35,19 +40,9 @@ document
       })
    })
 
-//login button
-document
-.getElementById("login")
-.addEventListener("click",(e)=>{
-   e.preventDefault();
-   console.log("clicked login...!")
-
-   window.location='/user/login';
-})
-
 //signup button...
 document
-.getElementById("signup")
+.getElementById("signin")
 .addEventListener("click",(e)=>{
    e.preventDefault();
    console.log("clicked signup...!")
